@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape bg1"></div>
+    <div class="bg-shape bg2"></div>
+    <div class="bg-shape bg3"></div>
+    <div class="bg-shape bg4"></div>
+    <div class="bg-shape bg5"></div>
+    <div class="container">
+        <div id="hud">
+            <span id="categoryDisplay"></span>
+            <span id="scoreDisplay"></span>
+            <span id="timerDisplay"></span>
+            <button id="darkModeToggle" title="Toggle dark mode" style="margin-left:16px;display:none;">🌙</button>
+        </div>
+        <div id="progressBarContainer"><div id="progressBar"></div></div>
+        <h1 id="mainHeading">Quiz Game</h1>
+        <div id="setup" class="card">
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="random">Random</option>
+                <option value="general">General Knowledge</option>
+                <option value="science">Science & Nature</option>
+                <option value="history">History</option>
+                <option value="sports">Sports</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="geography">Geography</option>
+                <option value="computers">Computers</option>
+                <option value="math">Mathematics</option>
+                <option value="politics">Politics</option>
+                <option value="art">Art</option>
+                <option value="animals">Animals</option>
+                <option value="vehicles">Vehicles</option>
+            </select>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="any">Any</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <label for="numQuestions">Number of Questions:</label>
+            <input type="number" id="numQuestions" min="1" max="20" value="5">
+            <button id="startBtn">Start Game</button>
+        </div>
+        <div id="quiz" class="card" style="display:none;">
+            <button id="quitBtn" title="Quit Quiz">✖</button>
+            <div id="quizHeader" style="width:100%;display:flex;justify-content:center;align-items:center;margin-bottom:36px;gap:32px;font-size:2rem;font-weight:900;letter-spacing:1px;text-align:center;"></div>
+            <div id="quizProgressBarContainer" style="width:100%;height:12px;background:rgba(255,255,255,0.10);border-radius:8px;box-shadow:0 2px 8px #6c63ff22;margin-bottom:32px;overflow:hidden;">
+                <div id="quizProgressBar" style="height:100%;width:0%;background:var(--accent2);border-radius:8px;transition:width 0.4s cubic-bezier(.68,-0.55,.27,1.55);"></div>
+            </div>
+            <div id="questionText"></div>
+            <div id="options"></div>
+            <button id="nextBtn" style="display:none;">Next</button>
+        </div>
+        <div id="result" class="card" style="display:none;">
+            <div id="resultSummary" style="width:100%;flex:1 1 auto;min-height:0;overflow-y:auto;margin-bottom:20px;padding-right:6px;font-size:1.2rem;"></div>
+            <button id="moreDetailsBtn" style="margin-bottom:20px;">More Details</button>
+            <div id="resultDetails" style="display:none;width:100%;flex:1 1 auto;min-height:0;overflow-y:auto;margin-bottom:20px;padding-right:6px;font-size:1.1rem;"></div>
+            <button id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
